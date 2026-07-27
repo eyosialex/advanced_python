@@ -4,10 +4,10 @@ class Book:
         self.title=title;
         self.page=page;
     def display(self):
-        print("author"+self.author)
-        print ("title"+self.title)
-        print("page"+self.page)
+        print("author: "+self.author)
+        print ("title: "+self.title)
+        print("page: ",self.page)
     def is_big(self):
-        return page>500
+        return self.page>500
 
         
