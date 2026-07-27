@@ -1,8 +1,8 @@
-class student :
+class Student :
     def __init__(self,name,age,department,gpa):
         self.name=name;
         self.age=age
-        self.departmet=deparment;
+        self.department=department;
         self.gpa=gpa
     def display(self):
         print("name:",self.name)
