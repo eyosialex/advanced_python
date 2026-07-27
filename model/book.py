@@ -5,7 +5,7 @@ class Book:
         self.title=title;
         self.page=page;
         self.available=True
-        Book.totalbook=+1;
+        Book.totalbook=Book.totalbook+1;
     def display(self):
         print("author: "+self.author)
         print ("title: "+self.title)
@@ -22,7 +22,9 @@ class Book:
     def return_book(self):
         self.available=true
         print ( "the book {self.name} has ben returned")
-        
+    @classmethod
+    def get_total_books(cls):
+        return print("totalbook: ",cls.totalbook) 
 
 
         
