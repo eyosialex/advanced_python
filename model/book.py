@@ -25,6 +25,12 @@ class Book:
     @classmethod
     def get_total_books(cls):
         return print("totalbook: ",cls.totalbook) 
+    @staticmethod
+    def check_page(page):
+        if page >500 :
+            print("large")
+        else :
+            print("miduem")
 
 
         

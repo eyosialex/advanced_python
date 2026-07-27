@@ -8,6 +8,7 @@ def main():
     book1.display()
     
     book2.display()
+    Book.check_page(560)
     print ( "my big book is: ")
     book1.is_big()
     print( "total books :" ,Book.totalbook)
