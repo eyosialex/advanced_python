@@ -11,8 +11,24 @@ parrot(voltage=1000000, action='VOOOOOM') # 2 keyword arguments
 parrot(action='VOOOOOM', voltage=1000000) # 2 keyword arguments
 parrot('a million', 'bereft of life', 'jump') # 3 positional arguments
 parrot('a thousand', state='pushing up the daisies') # 1 positional, 1 keyword
-#buy all this are invalid 
+#but all this are invalid 
 parrot() # required argument missing
 parrot(voltage=5.0, 'dead') # non-keyword argument after a keyword argument
 parrot(110, voltage=220) # duplicate value for the same argument
 parrot(actor='John Cleese') # unknown keyword argument
+# *name to pass tuples 
+# **name to pass the dictionary 
+def cheeseshop(kind, *arguments, **keywords):
+print("-- Do you have any", kind, "?")
+print("-- I'm sorry, we're all out of", kind)
+for arg in arguments:
+print(arg)
+print("-" * 40)
+for kw in keywords:
+print(kw, ":", keywords[kw])
+
+cheeseshop("Limburger", "It's very runny, sir.",
+"It's really very, VERY runny, sir.",
+shopkeeper="Michael Palin",
+client="John Cleese",
+sketch="Cheese Shop Sketch")
