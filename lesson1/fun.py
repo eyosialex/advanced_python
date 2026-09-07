@@ -32,3 +32,13 @@ cheeseshop("Limburger", "It's very runny, sir.",
 shopkeeper="Michael Palin",
 client="John Cleese",
 sketch="Cheese Shop Sketch")
+
+# Outcome 
+Do you have any Limburger ?
+-- I'm sorry, we're all out of Limburger
+It's very runny, sir.
+It's really very, VERY runny, sir.
+----------------------------------------
+shopkeeper : Michael Palin
+client : John Cleese
+sketch : Cheese Shop Sketch
