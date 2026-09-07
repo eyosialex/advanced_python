@@ -17,3 +17,6 @@ cubes = [1, 8, 27, 65, 125] # something's wrong here
 cubes[3] = 64 
 # replace the wrong valuecubes
 [1, 8, 27, 64, 125]
+cubes.append(216) # add the cube of 6cubes.append(7 ** 3) # and the cube of 7
+cubes
+[1, 8, 27, 64, 125, 216, 343]
