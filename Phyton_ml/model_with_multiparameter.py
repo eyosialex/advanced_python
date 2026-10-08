@@ -15,3 +15,4 @@ x=np.column_stack((np.ones(len(x)),x))
 print ("the update value of x: \n",x)
 
 
+
