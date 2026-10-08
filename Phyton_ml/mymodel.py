@@ -9,5 +9,10 @@ y_pred= X @ beta
 print ( "pridiction of the model is : ")
 print (y_pred)
 error =y-y_pred
+sse=np.sum(error **2 )
+mse=np.mean(error**2)
 
+print ( "SSE:",sse)
+print( "MSE:", mse)
+print ()
 print(error)
