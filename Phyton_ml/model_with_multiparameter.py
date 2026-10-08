@@ -13,6 +13,7 @@ print("Feature & Obsevation:\n",x.shape);
 print ("the length of the array : ",len(x))
 x=np.column_stack((np.ones(len(x)),x))
 print ("the update value of x: \n",x)
-
+beta =np.linalg.inv(x@x.T)@x.T@y
+print("the pameters value:\n ",beta)
 
 
