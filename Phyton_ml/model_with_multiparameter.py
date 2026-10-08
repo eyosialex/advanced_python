@@ -7,5 +7,11 @@ x= np.array(
     [8, 9, 4]
 ])
 y=np.array([60, 75, 85, 95])
-print("feature:/n",x)
-print("target:/n",x)
+print("features:\n",x)
+print("target:\n",x)
+print("Feature & Obsevation:\n",x.shape);
+print ("the length of the array : ",len(x))
+x=np.column_stack((np.ones(len(x)),x))
+print ("the update value of x: \n",x)
+
+
