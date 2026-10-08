@@ -5,3 +5,9 @@ X=np.column_stack((np.ones(len(x)),x))
 print(X)
 beta= np.linalg.inv(X.T @ X)@ X.T@ y
 print (beta)
+y_pred= X @ beta
+print ( "pridiction of the model is : ")
+print (y_pred)
+error =y-y_pred
+
+print(error)
