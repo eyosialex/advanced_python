@@ -15,5 +15,8 @@ x=np.column_stack((np.ones(len(x)),x))
 print ("the update value of x: \n",x)
 beta =np.linalg.inv(x@x.T)@x.T@y
 print("the pameters value:\n ",beta)
+y_pre=beta@x
+print ("pridiction \n:",y_pre)
+
 
 
