@@ -11,8 +11,12 @@ print (y_pred)
 error =y-y_pred
 sse=np.sum(error **2 )
 mse=np.mean(error**2)
+mean_y=np.mean(y)
+sst=np.sum((y-mean_y)**2)
+R=1-(sse/sst)
+
 
 print ( "SSE:",sse)
 print( "MSE:", mse)
-print ()
+print ("R^2:",R)
 print(error)
