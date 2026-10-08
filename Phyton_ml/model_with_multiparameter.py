@@ -17,6 +17,17 @@ beta =np.linalg.inv(x@x.T)@x.T@y
 print("the pameters value:\n ",beta)
 y_pre=beta@x
 print ("pridiction \n:",y_pre)
+error=y-y_pre
+mse=np.mean(error)
+rmse=np.sqrt(mse)
+sse=np.sum(error)
+mean_y=np.mean(y)
+SST=np.sum((y-mean_y)**2)
+r=1-sse/SST
+print ("SSE: ",sse);
+print("MSE: ",mse)
+print("RMSE: ",rmse)
+print("R^2: ",r)
 
 
 
