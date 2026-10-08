@@ -8,19 +8,19 @@ x= np.array(
 ])
 y=np.array([60, 75, 85, 95])
 print("features:\n",x)
-print("target:\n",x)
+print("target:\n",y)
 print("Feature & Obsevation:\n",x.shape);
 print ("the length of the array : ",len(x))
 x=np.column_stack((np.ones(len(x)),x))
 print ("the update value of x: \n",x)
-beta =np.linalg.inv(x@x.T)@x.T@y
+beta=np.linalg.pinv(x.T @ x) @ x.T @ y
 print("the pameters value:\n ",beta)
-y_pre=beta@x
+y_pre=x @ beta
 print ("pridiction \n:",y_pre)
 error=y-y_pre
-mse=np.mean(error)
+mse=np.mean(error**2)
 rmse=np.sqrt(mse)
-sse=np.sum(error)
+sse=np.sum(error**2)
 mean_y=np.mean(y)
 SST=np.sum((y-mean_y)**2)
 r=1-sse/SST
