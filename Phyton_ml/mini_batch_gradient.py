@@ -22,5 +22,5 @@ for i in range(epoch):
         error=y_pre-y_out
         gradient_descent=(2/min_batch)*x_in.T@error
         beta=beta-a*gradient_descent
-        
 
+print ( "parametres are : ",beta)
