@@ -11,7 +11,7 @@ beta= np.zeros(x.shape[1])
 for i in range(epoch):
 
     y_pre=x@beta
-    error=y-y_pre
+    error=y_pre-y
     #calculate the gradient 
     gradient=(2/n) *x.T @ error
     #update the parameters 
@@ -20,6 +20,9 @@ for i in range(epoch):
     y_new_pred=x@beta
 
     loss.append(np.mean((y-y_new_pred)**2))
+print("Learned parameters:", beta)
+print("Predictions:", x @ beta)
+print("Final MSE:", loss[-1])
 plt.plot(range(1,(epoch+1)),loss)
 plt.xlabel("Number Epoch")
 plt.ylabel("Loss")
