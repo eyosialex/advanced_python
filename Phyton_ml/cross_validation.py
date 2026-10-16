@@ -41,3 +41,9 @@ for alpha, score in zip(
     search.cv_results_["mean_test_score"]
 ):
     print(f"alpha={alpha}: CV MSE={-score:.2f}")
+best_model=search.best_estimator_
+test_pridict=best_model.predict(x_test)
+mse=mean_squared_error(
+   test_pridict,y_test 
+)
+print ( "test MSE ",mse)
