@@ -36,3 +36,8 @@ search=GridSearchCV(
 search.fit(x_train,y_train)
 print("best parameters : ",search.best_params_['ridge__alpha'])
 print ("best CV MSE",-search.best_score_)
+for alpha, score in zip(
+    search.cv_results_["param_ridge__alpha"],
+    search.cv_results_["mean_test_score"]
+):
+    print(f"alpha={alpha}: CV MSE={-score:.2f}")
