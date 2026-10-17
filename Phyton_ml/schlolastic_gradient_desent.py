@@ -7,7 +7,7 @@ X = np.array([
 ])
 
 y = np.array([60, 75, 85, 95])
-epoch=100
+epoch=200
 x1=X.shape[0]
 y1=X.shape[1]
 a=0.001
@@ -19,6 +19,7 @@ for i in range(epoch):
 
         y_pre=xi*beta
         error=y-y_pre
+
         gradient= (2)*xi*error
         beta=beta-a*gradient
 print ("parameters: ",beta)
