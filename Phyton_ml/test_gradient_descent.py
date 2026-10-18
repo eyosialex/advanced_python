@@ -22,4 +22,4 @@ gradient_descent(alpha=0.05)
 gradient_descent(alpha=0.4)
 
 # Overshooting and divergence
-gradient_descent(alpha=1.1)
+gradient_descent(alpha=2.1)
