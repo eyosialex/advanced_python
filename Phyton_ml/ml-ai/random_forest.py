@@ -91,8 +91,8 @@ for i, tree in enumerate(forest.estimators_):
 # ==================================
 
 new_customer = pd.DataFrame([{
-    "income": 5500,
-    "credit_score": 680,
+    "income": 660,
+    "credit_score": 890,
     "existing_debt": 0
 }])
 
