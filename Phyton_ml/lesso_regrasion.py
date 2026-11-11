@@ -3,7 +3,7 @@ import numpy as np
 
 # 1. Create a dataset
 rng = np.random.default_rng(42)
-n = 200
+n = 300
 
 x1 = rng.normal(size=n)
 x2 = rng.normal(size=n)
