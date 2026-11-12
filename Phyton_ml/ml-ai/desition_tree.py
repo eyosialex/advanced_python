@@ -158,3 +158,34 @@ print("\nPREDICTION PROBABILITIES:")
 
 for class_name, probability in zip(model.classes_, probabilities[0]):
     print(f"{class_name}: {probability:.2%}")
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier, export_text
+from sklearn.metrics import accuracy_score, classification_report
+
+# 1. Load dataset (features X and labels y)
+iris = load_iris()
+X, y = iris.data, iris.target
+
+# 2. Split into 80% training data and 20% unseen test data
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+# 3. Initialize and train the Decision Tree
+# max_depth=3 prevents the tree from growing too deep and overfitting
+clf = DecisionTreeClassifier(criterion="gini", max_depth=3, random_state=42)
+clf.fit(X_train, y_train)
+
+# 4. Make predictions on the test set
+y_pred = clf.predict(X_test)
+
+# 5. Evaluate performance
+print(f"Accuracy: {accuracy_score(y_test, y_pred):.2f}\n")
+print("Classification Report:")
+print(classification_report(y_test, y_pred, target_names=iris.target_names))
+
+# 6. Print the actual if-else decision rules the tree learned
+tree_rules = export_text(clf, feature_names=iris.feature_names)
+print("Learned Decision Tree Rules:\n")
+print(tree_rules)
