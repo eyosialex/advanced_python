@@ -81,3 +81,6 @@ print (df.isnull())
 print(df.isnull().sum())
 df=df.drop_duplicates()
 print("the size of the after remove deplication : " ,df.shape)
+numeric_col=["age","study_hours","attendance","exam_score"]
+df=df.fillna(df[numeric_col].median())
+print( df.isnull().sum())
