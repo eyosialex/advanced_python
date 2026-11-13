@@ -86,11 +86,59 @@ numeric_col=["age","study_hours","attendance","exam_score"]
 df=df.fillna(df[numeric_col].median())
 print( df.isnull().sum())
 encoded_df=pd.get_dummies(
-    df,columns=["department"],
+    df,columns=["department","gender"],
     dtype=int
 )
 
 print(encoded_df)
-standard_data=scaler.fit_transform()
-df[numeric_col]
-print(standard_data.head())
+
+standard_data=scaler.fit_transform(encoded_df[numeric_col])
+
+print(standard_data)
+scaled_df = pd.DataFrame(
+    standard_data,
+    columns=numeric_col,
+    index=df.index
+)
+catagorical_df=encoded_df.drop(
+    columns=["student_id"]+numeric_col
+)
+final_data=pd.concat([scaled_df,catagorical_df],
+                     axis=1)
+print(final_data.head())
+
+# Histograms for numerical columns
+
+df[numeric_col].hist(
+    figsize=(12, 8),
+    bins=10,
+    edgecolor="black"
+)
+
+plt.suptitle("Distribution of Student Numerical Features")
+plt.tight_layout()
+plt.show()
+
+# Boxplots for numerical features
+
+plt.figure(figsize=(12, 8))
+
+for i, column in enumerate(numeric_col, 1):
+    plt.subplot(2, 2, i)
+    plt.boxplot(df[column])
+    plt.title(f"Boxplot of {column}")
+    plt.ylabel(column)
+
+plt.tight_layout()
+plt.show()
+print("Final dataset:")
+print(final_data.head())
+
+print("\nDataset shape:")
+print(final_data.shape)
+
+print("\nMissing values:")
+print(final_data.isnull().sum())
+
+print("\nData types:")
+print(final_data.dtypes)
